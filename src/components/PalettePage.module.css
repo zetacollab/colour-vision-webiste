@@ -1,12 +1,6 @@
-:global(body) {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
 .mainBox {
-  width: 595px;
-  min-height: 1100px;
+  width: 794px;
+  min-height: 1123px;
   background: #fff;
   padding: 30px 20px;
   position: relative;
@@ -17,14 +11,14 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  margin: 0 auto; /* ✅ keeps it centered */
+  margin: 0 auto;
 }
 
 /* Logo */
 .logoContainer {
   position: absolute;
-  top: 20px;
-  left: 0;
+  top: 40px;
+  left: 20px;
   z-index: 10;
 }
 .logoPart {
@@ -32,113 +26,116 @@
   height: auto;
 }
 
-/* Hero */
-.heroText {
-  margin-top: 60px;
+/* Heading and Subheading blocks */
+.headingBlock {
+  margin-top: 80px;
   text-align: center;
-  width: 100%;
 }
-.heroText h1 {
+.headingBlock h1 {
   font-size: 40px;
   color: rgba(24, 10, 84, 1);
   font-weight: 500;
+  margin: 0;
 }
-.heroText p {
+
+.subheadingBlock {
+  margin-top: 25px;
+  text-align: center;
+}
+.subheadingBlock p {
   font-size: 20px;
   font-weight: 200;
   color: rgba(24, 10, 84, 1);
-  margin-top: 5px;
+  margin: 0;
 }
 
 /* Hero image */
 .heroSection {
   width: 100%;
   text-align: center;
-  margin: 20px 0;
+  margin-top: 30px;
 }
-.heroSection img {
+.heroSection .imageBox {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.heroSection .imageBox img {
   width: 100%;
-  max-width: 600px;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   border-radius: 2px;
-  display: block;
-  margin: 20px auto;
 }
 
-/* Palette section */
+/* Palette container with fixed height */
+/* Palette container with fixed height */
 .paletteSection {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 15px;
-  width: 100%;
+  justify-content: center;     /* 🔹 Center all children */
+  flex-wrap: nowrap;           /* keep them in one row */
+  gap: 20px;                   /* 🔹 small consistent spacing */
+  padding: 20px;
+  width: auto;                 /* 🔹 only as wide as needed */
+  max-width: 100%;             /* don’t overflow mainBox */
+  margin: 40px 20px 0 20px;    /* spacing from top & sides */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
-.paletteCard {
-  text-align: center;
-}
-.colorBox {
-  width: 41px;
-  height: 40px;
-  border-radius: 50%;
-  border: 4px solid rgba(224, 225, 225, 1);
-  margin: 0 auto 6px;
-  box-shadow: 0px 11.75px 23.51px 0px rgba(59, 64, 86, 0.15);
-  position: relative;
-
-}
-.colorBox::before,
-.colorBox::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 50px;
-  height: 3px;
-  background: rgba(229, 229, 229, 1);
-  transform: translateY(-50%);
-}
-.colorBox::before {
-  left: -50px;
-}
-.colorBox::after {
-  right: -50px;
-}
-
-.paletteInfo h3 {
-  margin: 2px 0;
-  font-size: 9px;
-  font-weight: 500;
-  color: rgba(18, 26, 45, 1);
-}
-.paletteInfo p {
-  margin: 1px 0;
-  font-size: 10px;
-  color: rgba(33, 52, 98, 1);
-  font-weight: 500;
-}
-.paletteInfo .paletteRgb {
-  display: none;
-}
+/* Each elevated card */
 
 .elevatedBox {
-  width: calc((100% - 120px) / 5);
-  min-width: 80px;
-  max-width: 120px;
-  min-height: 120px;
-  border-radius: 0 0 11.75px 11.75px;
-  box-shadow: 0px 11.75px 23.51px 0px rgba(59, 64, 86, 0.1);
+  width: 120px;                /* 🔹 fixed width for uniformity */
+  height: 160px;
+  border-radius: 12px;
+  box-shadow: 0px 11.75px 23.51px rgba(59, 64, 86, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 8px;
-  overflow: hidden;
+  padding: 12px 6px;
   box-sizing: border-box;
+  background: #f2f2f2;
+  overflow: hidden;
+ 
+}
+
+
+/* Circle inside the elevated card */
+.colorBox {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 4px solid rgba(224, 225, 225, 1);
+  margin-bottom: 8px;
+  box-shadow: 0px 11.75px 23.51px rgba(59, 64, 86, 0.15);
+  position: relative; /* necessary for pseudo elements */
+}
+
+
+/* Text inside card */
+.paletteInfo {
+  text-align: center;
+}
+.paletteInfo h3 {
+  margin: 2px 0;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(18, 26, 45, 1);
+}
+.paletteInfo p {
+  margin: 2px 0;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(33, 52, 98, 1);
 }
 
 /* Info box */
-.infoBox {
+/* .infoBox {
   margin-top: 40px;
   max-width: 560px;
   width: 100%;
@@ -149,27 +146,46 @@
   align-items: center;
   font-size: 12px;
   background: rgba(239, 239, 239, 1);
+} */
+.infoBox {
+  margin-top: auto;       /* push it to bottom */
+  margin-bottom: 10px;    /* little space from bottom */
+  margin-left: 10px;      /* small left margin */
+  margin-right: 10px;     /* small right margin */
+  max-width: 560px;
+  width: calc(100% - 20px); /* full width minus left/right margins */
+  min-height: 54px;
+  border-radius: 14px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  background: rgba(239, 239, 239, 1);
 }
+
 .infoText {
   color: rgba(105, 105, 105, 1);
   margin: 0;
   line-height: 1.4;
 }
 
-/* Responsive */
-@media screen and (max-width: 650px) {
-  .mainBox {
-    width: 90%;
-    padding: 20px;
-  }
-  .heroText h1 {
-    font-size: 28px;
-  }
-  .heroText p {
-    font-size: 16px;
-  }
-  .elevatedBox {
-    width: 100px;
-    min-height: 100px;
-  }
+
+
+.colorBox::before,
+.colorBox::after {
+  content: "";
+  position: absolute;
+  top: 50%;                  /* align with circle center */
+  width: 60px;               /* line length (tweak as needed) */
+  height: 2px;               /* line thickness */
+  background-color: rgba(224, 225, 225, 1); /* same grey as border */
+  transform: translateY(-50%);
+}
+
+.colorBox::before {
+  left: -60px;  /* extend to the left */
+}
+
+.colorBox::after {
+  right: -60px; /* extend to the right */
 }

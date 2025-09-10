@@ -1,0 +1,112 @@
+body {
+  background-color: rgba(254, 250, 245, 1);
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  height: 100vh;           /* take full screen height */
+  margin: 0;
+}
+
+.mainBox {
+  width: 500px;
+  background: #fff;         /* white card */
+  padding: 20px;
+
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.heroText h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #181a54;
+}
+
+.heroText p {
+
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.heroSection input {
+  margin: 12px 0;
+}
+
+.heroSection button {
+  padding: 8px 16px;
+  background: #181a54;
+  margin-top: 30px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.heroSection button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.infoBox {
+  margin-top: 20px;
+  padding: 10px;
+  background: #efefef;
+  border-radius: 6px;
+}
+
+.infoText {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+/* hidden palette page for pdf */
+.hiddenWrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 794px; /* match A4 width */
+  opacity: 0;         /* invisible but renderable */
+  pointer-events: none;
+}
+
+
+
+
+.fileInputWrapper input[type="file"] {
+  display: none; /* hide ugly default */
+}
+
+
+
+.fileInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* spacing between Choose File button & filename */
+  margin-bottom: 16px;
+  margin-left: 120px;
+  margin-top: 30px;
+   /* space below input before Submit button */
+}
+
+.fileLabel {
+  padding: 6px 12px;
+  background: #181a54;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.fileName {
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* limit width so it doesn’t break layout */
+}
+

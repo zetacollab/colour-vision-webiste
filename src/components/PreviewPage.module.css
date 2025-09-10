@@ -1,0 +1,27 @@
+.previewContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* hide outer scrollbars */
+  background: #000;  /* optional; keeps background behind PDF */
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+/* Target the iframe inside the container */
+.previewContainer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+    /* Firefox */
+}
+
+/* WebKit (Chrome/Safari) scrollbars */
+.previewContainer iframe::-webkit-scrollbar {
+  display: none;
+}
