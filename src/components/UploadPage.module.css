@@ -109,4 +109,10 @@ body {
   text-overflow: ellipsis;
   max-width: 200px; /* limit width so it doesn’t break layout */
 }
+.disabledLabel {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 
